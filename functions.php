@@ -13,6 +13,13 @@
  */
 define( 'CHILD_THEME_ASTRA_CHILD_VERSION', '1.0.0' );
 
+require_once('theme-init/plugin-update-checker.php');
+$themeInit = Puc_v4_Factory::buildUpdateChecker(
+	'https://raw.githubusercontent.com/mostak-shahid/update/master/mcaleadshub-child.json',
+	__FILE__,
+	'mcaleadshub-child'
+);
+
 /**
  * Enqueue styles
  */
