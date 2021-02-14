@@ -98,7 +98,7 @@ function crb_attach_theme_options() {
         ?>
         <div class="mos-icon-block-wrapper <?php echo $attributes['className'] ?>">
             <div class="mos-icon-block text-<?php echo esc_html( $fields['mos-icon-alignment'] ) ?>">
-                <div class="icon-part"><i class="fa <?php echo esc_html( $fields['mos-icon-class'] ); ?>" style="--color:<?php echo esc_html( $fields['mos-icon-color'] ); ?>"></i></div>
+                <div class="icon-part"><i class="fa <?php echo esc_html( $fields['mos-icon-class'] ); ?>" style="color:<?php echo esc_html( $fields['mos-icon-color'] ); ?>"></i></div>
                 <div class="text-part">
                     <h4><?php echo esc_html( $fields['mos-icon-heading'] ); ?></h4>
                     <p><?php echo esc_html( $fields['mos-icon-content'] ); ?></p>                    

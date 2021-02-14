@@ -25,7 +25,7 @@ function custom_sticky_header(){
     </div> <!-- Main Header Bar Wrap -->
     <?php
 }
-add_action('astra_main_header_bar_top', 'mos_astra_header_before', 5);
+// add_action('astra_main_header_bar_top', 'mos_astra_header_before', 5);
 function mos_astra_header_before(){
     ?>
     <div class="main-top-bar">

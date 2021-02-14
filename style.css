@@ -13,6 +13,10 @@ html {scroll-behavior: smooth;}
 .text-left{text-align: left;}
 .text-right{text-align: right;}
 .text-center{text-align: center;}
+.bg-white{background-color: #ffffff!important;}
+.h-100p{height: 100%;}
+.font-weight-300{font-weight: 300!important}
+strong{font-weight: 600!important}
 .rounded {border-radius: 0.25rem !important;}
 .rounded-0 {border-radius: 0 !important;}
 .rounded-1 {border-radius: 0.2rem !important;}
@@ -30,6 +34,7 @@ html {scroll-behavior: smooth;}
 }
 .d-block{display: block}
 .align-item-center{align-items: center;} 
+.mb-0{margin-bottom: 0!important;}
 #primary,.ast-separate-container #primary, .ast-separate-container.ast-left-sidebar #primary, .ast-separate-container.ast-right-sidebar #primary {
     margin-top: 0;
 }
@@ -52,6 +57,38 @@ html {scroll-behavior: smooth;}
 .main-top-bar-container, .mos-sticky-header .main-header-container {
     justify-content: space-between;
 }
+.gradient-text {
+    background: linear-gradient(180deg, #f7941e, #ef6a23);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#home-banner-section {
+    background-image: url('images/banner-left-image.png'),url('images/banner-right-image.png');
+    background-position: left center, right center;
+    background-repeat: no-repeat, no-repeat;
+    background-size: auto, auto;
+}
+#home-banner-section.wp-block-cover.has-background-dim:not(.has-background-gradient):before {
+    opacity: 0;
+}
+#reliable-investment .mos-image-block-wrapper .text-part {padding: 20px;}
+#reliable-investment .mos-image-block-wrapper .text-part h4{font-size: 24px}
+#about-section .mos-icon-block-wrapper .mos-icon-block {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+}
+#about-section .mos-icon-block-wrapper {
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.1);
+    height: 100%;
+}
+#about-section .mos-icon-block-wrapper .mos-icon-block .icon-part i {font-size: 50px;margin-right: 20px;}
+#about-section .mos-icon-block-wrapper .mos-icon-block .text-part h4 {margin-bottom: 5px;}
+#about-section .mos-icon-block-wrapper .mos-icon-block .text-part p {margin-bottom: 0;}
 /*Short Code*/
 .embed-responsive {
     position: relative;
