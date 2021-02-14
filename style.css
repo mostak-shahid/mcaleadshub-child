@@ -1,0 +1,299 @@
+/**
+Theme Name: Astra Child
+Author: Md. Mostak Shahid
+Author URI: https://www.mdmostakshahid.com/
+Description: Astra is the fastest, fully customizable & beautiful theme suitable for blogs, personal portfolios and business websites. It is very lightweight (less than 50KB on frontend) and offers unparalleled speed. Built with SEO in mind, Astra comes with schema.org code integrated so search engines will love your site. Astra offers plenty of sidebar options and widget areas giving you a full control for customizations. Furthermore, we have included special features and templates so feel free to choose any of your favorite page builder plugin to create pages flexibly. Some of the other features: # WooCommerce Ready # Responsive # Compatible with major plugins # Translation Ready # Extendible with premium addons # Regularly updated # Designed, Developed, Maintained & Supported by Brainstorm Force. Looking for a perfect base theme? Look no further. Astra is fast, fully customizable and beautiful theme!
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: janitorialleadspro-child
+Template: astra
+*/
+html {scroll-behavior: smooth;}
+.text-left{text-align: left;}
+.text-right{text-align: right;}
+.text-center{text-align: center;}
+.rounded {border-radius: 0.25rem !important;}
+.rounded-0 {border-radius: 0 !important;}
+.rounded-1 {border-radius: 0.2rem !important;}
+.rounded-2 {border-radius: 0.25rem !important;}
+.rounded-3 {border-radius: 0.3rem !important;}
+.rounded-circle {border-radius: 50% !important;}
+.rounded-pill {border-radius: 50rem !important;}
+.list-unstyled{list-style: none}
+.d-flex{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+}
+.d-block{display: block}
+.align-item-center{align-items: center;} 
+#primary,.ast-separate-container #primary, .ast-separate-container.ast-left-sidebar #primary, .ast-separate-container.ast-right-sidebar #primary {
+    margin-top: 0;
+}
+.mos-sticky-header {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    z-index: 9;
+    background-color: #ffffff;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
+
+.mos-sticky-header.tiny {
+    top: 0;
+}
+.main-top-bar-container, .mos-sticky-header .main-header-container {
+    justify-content: space-between;
+}
+/*Short Code*/
+.embed-responsive {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+}
+.embed-responsive::before {
+    display: block;
+    content: "";
+}
+.embed-responsive .embed-responsive-item,
+.embed-responsive iframe,
+.embed-responsive embed,
+.embed-responsive object,
+.embed-responsive video {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+.embed-responsive-32by9::before {
+    padding-top: 28.125%;
+}
+
+.embed-responsive-21by9::before {
+    padding-top: 42.857143%;
+}
+
+.embed-responsive-16by9::before {
+    padding-top: 56.25%;
+}
+
+.embed-responsive-4by3::before {
+    padding-top: 75%;
+}
+
+.embed-responsive-1by1::before {
+    padding-top: 100%;
+}
+.mos-post-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    margin: 0 auto;
+    width: 100%
+}
+.mos-post-grid.gap-sm {
+    grid-gap: 10px
+}
+.mos-post-grid.gap-md,.blog.post-archive .ast-row {
+    grid-gap: 20px
+}
+.mos-post-grid.gap-lg {
+    grid-gap: 30px
+}
+.mos-post-grid-unit {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    padding: 15px;
+    align-items: flex-end;
+    position: relative;
+    color: #ffffff;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.mos-post-grid-unit .wrapper {
+    position: relative;
+    padding-top: 30%;
+}
+.mos-post-grid-unit:before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,333333+100&0+0,1+100 */
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(51, 51, 51, 1) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(51, 51, 51, 1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(51, 51, 51, 1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#333333', GradientType=0);
+    /* IE6-9 */
+}
+.mos-post-grid-unit .post-meta {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+}
+.mos-post-grid-unit .post-meta > * {
+    margin-right: 15px;
+}
+.mos-post-grid-one,
+.mos-post-grid-two,
+.mos-post-grid-three,
+.mos-post-grid-four,
+.mos-post-grid-five,
+.mos-post-grid-six,
+.mos-post-grid-seven,
+.mos-post-grid-eight,
+.mos-post-grid-nine,
+.mos-post-grid-ten,
+.mos-post-grid-eleven,
+.mos-post-grid-twelve{
+    grid-column-end: span 12;
+}
+.nested {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(12, 1fr);
+}
+.mos-post-grid-merge-two-rows {
+    grid-row-end: span 2
+}
+.mos-post-grid-merge-three-rows {
+    grid-row-end: span 3
+}
+.mos-post-grid-merge-four-rows {
+    grid-row-end: span 4
+}
+.mos-post-grid-merge-five-rows {
+    grid-row-end: span 5
+}
+.mos-post-grid-merge-six-rows {
+    grid-row-end: span 6
+}
+@media (min-width:576px) {
+    .mos-post-grid-one {grid-column-end: span 1}
+    .mos-post-grid-two {grid-column-end: span 2}
+    .mos-post-grid-three {grid-column-end: span 3}
+    .mos-post-grid-four {grid-column-end: span 4}
+    .mos-post-grid-five {grid-column-end: span 5}
+    .mos-post-grid-six {grid-column-end: span 6}
+    .mos-post-grid-seven {grid-column-end: span 7}
+    .mos-post-grid-eight {grid-column-end: span 8}
+    .mos-post-grid-nine {grid-column-end: span 9}
+    .mos-post-grid-ten {grid-column-end: span 10}
+    .mos-post-grid-eleven {grid-column-end: span 11}
+}
+.highlight {
+    padding: 1px 7px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    background-image: url('images/stripes_10_w.png');
+}
+.highlight:not(.highlight_image) {
+    color: #fff;
+    background-color: #ec5b30;
+}
+.mos-counter-pricing {
+    padding: 50px;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+.mos-counter-pricing .title-part h3{
+    margin-bottom: 10px;
+}
+.mos-counter-pricing .pricing-part * {
+    display: inline-block;
+}
+.mos-counter-pricing .pricing-part .pricing-symbol {    
+    position: relative;
+    top: -30px;
+    font-size: 24px;
+    font-weight: 600;
+}
+.mos-counter-pricing .pricing-part .pricing-amount {
+    font-size: 72px;
+    font-weight: 700;
+}
+.mos-counter-pricing .pricing-part .plan-period {
+    display: inline-block;
+    vertical-align: text-bottom;
+    font-style: italic;
+    font-size: 14px;
+}
+.mos-counter-pricing .desc-part {
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+.mos-counter-pricing .pricing-features{
+    margin: 0;
+    list-style: none;
+    margin-bottom: 20px;
+}
+.mos-counter-pricing .pricing-features li{
+    padding: 5px 0;
+}
+.mos-counter-pricing .pricing-features li:before{
+    font-family: 'FontAwesome';
+    content: '\f05d';
+    margin-right: 10px;
+}
+.mos-counter-pricing .pricing-features li + li {
+    border-top: 1px solid #eaeaea;
+}
+.get_in_touch {
+    background-color: #2e96db;
+    padding: 25px 20px 25px 30px;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    margin-bottom: 1.6em;
+}
+.get_in_touch, 
+.get_in_touch a, 
+.get_in_touch h3, 
+.get_in_touch ul {
+    color: #fff!important;
+}
+.get_in_touch ul{
+    margin: 0;
+}
+.get_in_touch ul li {
+    margin: 0;
+    list-style: none;
+    position: relative;
+    word-wrap: break-word;
+}
+.get_in_touch ul li i {
+    color: rgba(0,0,0,.7);
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 23px;
+    text-align: center;
+}
+@media (max-width:1440px) {}
+@media (max-width:1366px) {}
+@media (max-width:1280px) {}
+@media (max-width:1024px) {}
+@media (max-width:992px) {}
+@media (max-width:768px) {}
+@media (max-width:480px) {}
