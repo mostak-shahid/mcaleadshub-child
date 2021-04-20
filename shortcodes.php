@@ -28,10 +28,12 @@ function shortcodes_page(){
 			<li>[mos-embed url="" ratio="32by9/21by9/16by9/4by3/1by1"] <span class="sdetagils">displays Embeds</span></li>		
 			<li>[mos-popup url="" icon-class=""] <span class="sdetagils">displays Popup</span></li>		
 			<li>[social-menu class="" links=""] <span class="sdetagils">displays Social Icons</span></li>		
+			<li>[mos-progress title="" amount="" height="" class=""] <span class="sdetagils">displays progress bar</span></li>		
 		</ol>
 	</div>
 	<?php
 }
+
 function home_url_func( $atts = array(), $content = '' ) {
 	$atts = shortcode_atts( array(
 		'slug' => '',
@@ -40,6 +42,7 @@ function home_url_func( $atts = array(), $content = '' ) {
 	return home_url( $atts['slug'] );
 }
 add_shortcode( 'home-url', 'home_url_func' );
+
 function site_identity_func( $atts = array(), $content = null ) {
 	global $forclient_options;
 	$logo_url = ($forclient_options['logo']['url']) ? $forclient_options['logo']['url'] : get_template_directory_uri(). '/images/logo.png';
@@ -80,15 +83,16 @@ function site_name_func( $atts = array(), $content = '' ) {
 	return $html;
 }
 add_shortcode( 'site-name', 'site_name_func' );
+
 function copyright_symbol_func() {
 	return '&copy;';
 }
 add_shortcode( 'copyright-symbol', 'copyright_symbol_func' );
+
 function this_year_func() {
 	return date('Y');
 }
 add_shortcode( 'this-year', 'this_year_func' );
-
 
 function feature_image_func( $atts = array(), $content = '' ) {
 	global $mosacademy_options;
@@ -131,7 +135,7 @@ function font_awesome_func( $atts = array(), $content = '' ) {
 		'class' => '',
 		'container-class' => '',
 	), $atts, 'font-awesome' );
-    $html .= '<div class="'.$atts['container-class'].'"><i class="fa fas '.$atts['class'].'"></i></div>';
+    $html .= '<span class="'.$atts['container-class'].'"><i class="fa fas '.$atts['class'].'"></i></span>';
 	return $html;
 }
 add_shortcode( 'font-awesome', 'font_awesome_func' );
@@ -227,13 +231,35 @@ function mos_popup_func($atts = array(), $content = '') {
         'icon-class' => 'fa-play',
 	), $atts, 'mos-popup' );
     ob_start(); ?>
-        <div class="popup-btn-wrapper">
+        <span class="popup-btn-wrapper">
             <a data-fancybox="gallery" href="<?php echo $atts['url'] ?>"><i class="fa <?php echo $atts['icon-class'] ?>"></i></a>
-        </div>
+        </span>
     <?php $html = ob_get_clean();
     return $html;
 }
 add_shortcode( 'mos-popup', 'mos_popup_func' );
+
+function mos_progress_func($atts = array(), $content = '') {
+	$atts = shortcode_atts( array(
+        'title' => '',
+        'amount' => 0,
+        'height' => 0,
+        'class' => '',
+	), $atts, 'mos-progress' );
+    ob_start(); ?>
+        <div class="mos-progress-wrap">
+            <div class="text-part">
+                <span class="title-part"><?php echo $atts['title'] ?></span>
+                <span class="amount-part"><?php echo $atts['amount'] ?>%</span>
+            </div>
+            <div class="progress" style="<?php if (@$atts['height']) {echo 'height:'.$atts['height'].'px';} ?>">
+                <div class="progress-bar <?php echo $atts['class'] ?>" role="progressbar" style="width: <?php echo $atts['amount'] ?>%" aria-valuenow="<?php echo $atts['amount'] ?>" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>          
+        </div>
+    <?php $html = ob_get_clean();
+    return $html;
+}
+add_shortcode( 'mos-progress', 'mos_progress_func' );
 
 function highlight_func($atts = array(), $content = '') {
 	$atts = shortcode_atts( array(
@@ -286,3 +312,113 @@ function contact_box_func($atts = array(), $content = '') {
     return $html;
 }
 add_shortcode( 'contact_box', 'contact_box_func' );
+
+function button_func($atts = array(), $content = '') {
+	$atts = shortcode_atts( array(
+        'title' => 'Button',
+		'link' => '#',
+		'target' => '',
+		'align' => 'left',
+		'icon' => '',
+		'icon_position' => '',
+		'color' => '',
+		'font_color' => '',
+		'size' => '2',
+		'full_width' => '',
+		'class' => '',
+		'download' => '',
+		'rel' => '',
+		'onclick' => '',
+        
+	), $atts, 'button' );
+    ob_start(); ?>
+        <div class="button_align align_<?php echo $atts['align'] ?>">
+            <a class="button  button_size_<?php echo $atts['size'] ?> button_js" href="<?php echo $atts['link'] ?>" <?php if ($atts['target']) : ?>target="_blank" <?php endif; ?>>
+                <span class="button_label"><?php echo $atts['title'] ?></span>
+            </a>
+        </div>
+    <?php $html = ob_get_clean();
+    return $html;
+}
+add_shortcode( 'button', 'button_func' );
+
+function blockquote_func($atts = array(), $content = '') {
+	$atts = shortcode_atts( array(
+        'blockquote ' => '',
+		'link' => '',
+		'target' => '',        
+	), $atts, 'blockquote' );
+    ob_start(); ?>
+        <div class="blockquote">
+            <blockquote><?php echo $content ?></blockquote>
+        </div>
+    <?php $html = ob_get_clean();
+    return $html;
+}
+add_shortcode( 'blockquote', 'blockquote_func' );
+
+function idea_func($atts = array(), $content = '') {
+    ob_start(); ?>
+        <div class="idea_box">
+            <div class="icon"><i class="fa fa-lightbulb-o"></i></div>
+            <div class="desc"><?php echo $content ?></div>
+        </div>
+    <?php $html = ob_get_clean();
+    return $html;
+}
+add_shortcode( 'idea', 'idea_func' );
+
+
+function shop_slider_func($atts = array(), $content = '') {
+	$atts = shortcode_atts( array(
+        'title' => '',
+		'count' => '4',
+		'show' => '',        
+		'category' => '',        
+		'orderby' => 'date',        
+		'order' => 'DESC',        
+	), $atts, 'shop_slider' ); 
+    $cat = ($atts['category']) ? preg_replace('/\s+/', '', $atts['category']) : '';
+    ob_start(); ?>
+        <div class="shop-slider-wrapper">
+            <div class="slider_header">
+                <h4 class="title"><?php echo $atts['title'] ?></h4>
+            </div> 
+       
+            <?php
+            $args = array(
+                'post_type' => 'product',
+                'posts_per_page' => $atts['count'],
+                'orderby' => $atts['orderby'],
+                'order'   => $atts['order'],
+            );
+            
+            if ($atts['category']) {
+                $args['tax_query'][] = array(
+                        'taxonomy' => 'product_cat',
+                        'field'    => 'slug',
+                        'terms'    => explode(',', $cat),
+                    );
+            }
+            $query = new WP_Query( $args );
+            if ( $query->have_posts() ) : ?>                
+                <div class="slick-slider mx--15" data-slick='{"slidesToShow": 3, "slidesToScroll": 1,"dots":true}'>
+                <?php while ( $query->have_posts() ) : $query->the_post();                     
+                    $price = (get_post_meta(get_the_ID(),'_sale_price', true))?get_post_meta(get_the_ID(),'_sale_price', true):get_post_meta(get_the_ID(),'_price', true);
+                    ?>
+                    <div class="item item-<?php echo get_the_ID() ?> p-15">
+                        <div class="position-relative p-15 box-shadow rounded">
+                            <h4 class="title mb-0"><?php echo get_the_title() ?></h4>
+                            <span class="currency text-theme-2"><?php echo get_woocommerce_currency_symbol();?></span><span class="price text-theme-2"><?php echo $price; ?></span>
+                            <a href="<?php echo get_the_permalink() ?>" class="hidden-link">Read More</a>
+                        </div>
+                    </div>
+                <?php endwhile; ?>
+                </div>
+            <?php endif; ?>
+            <?php wp_reset_postdata();?>                           
+        </div>
+    <?php $html = ob_get_clean();
+    return $html;
+}
+add_shortcode( 'shop_slider', 'shop_slider_func' );

@@ -25,17 +25,22 @@ function custom_sticky_header(){
     </div> <!-- Main Header Bar Wrap -->
     <?php
 }
-// add_action('astra_main_header_bar_top', 'mos_astra_header_before', 5);
+add_action('astra_main_header_bar_top', 'mos_astra_header_before', 5);
 function mos_astra_header_before(){
     ?>
-    <div class="main-top-bar">
+    <div class="main-top-bar bg-theme-2">
         <div class="ast-container">
             <div class="ast-flex main-top-bar-container">
-                <div class="column one">
-                    <ul class="contact_details">
-                        <li class="slogan">Need Janitorial Leads?</li>
-                        <li class="phone"><i class="fa fa-phone"></i> <a href="tel:(646)583-1385">(646) 583-1385</a></li>
-                    </ul>                    
+                <div class="d-flex w-100p justify-content-between align-items-center">                   
+                    <div class="wrap">
+                        <ul class="list-inline contact_details">
+                            <li class="email"><i class="fa fa-envelope-o"></i> <a href="mailto:office@mcaleadshub.com">office@mcaleadshub.com</a></li>
+                            <li class="phone"><i class="fa fa-phone"></i> <a href="tel:(646)583-1385">(646) 583-1385</a></li>
+                        </ul>                    
+                    </div>           
+                    <div class="wrap">
+                        <div class="d-inline-block"><?php echo do_shortcode('[social-menu class="widget-social social-menu" links="https://www.facebook.com,https://www.twitter.com"]') ?></div>                    
+                    </div>                           
                 </div>
             </div>
         </div>
@@ -63,11 +68,12 @@ function mos_custom_header(){
 /**
  * Update the featured images size from Astra
  */
-add_filter( 'astra_post_thumbnail_default_size', 'update_featured_images_size_callback' ); 
+//add_filter( 'astra_post_thumbnail_default_size', 'update_featured_images_size_callback' ); 
 function update_featured_images_size_callback( $size ) {
     if(!is_single()) $size = array( 373, 250 ); // Update the 500(Width), 500(Height) as per your requirment.
 	return $size;
 }
+//add_filter( 'post_class', 'mos_post_class_blog_grid' );
 if ( ! function_exists( 'mos_post_class_blog_grid' ) ) {
 	function mos_post_class_blog_grid( $classes ) {
 
@@ -79,13 +85,12 @@ if ( ! function_exists( 'mos_post_class_blog_grid' ) ) {
 	}
 }
 
-add_filter( 'post_class', 'mos_post_class_blog_grid' );
 
 // Update your custom tablet breakpoint below - like return 992;
-add_filter( 'astra_tablet_breakpoint', function() {
+/*add_filter( 'astra_tablet_breakpoint', function() {
     return 992;
-});
+});*/
 // Update your custom mobile breakpoint below - like return 768px;
-add_filter( 'astra_mobile_breakpoint', function() {
+/*add_filter( 'astra_mobile_breakpoint', function() {
     return 768;
-});
+});*/
